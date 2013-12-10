@@ -1,5 +1,3 @@
-console.log("hello from content script");
-
 // Generic JS utility to get currently selected text from a document.
 function getSelectionHtml() {
   var html = "";
@@ -20,14 +18,14 @@ function getSelectionHtml() {
   return html;
 }
 
-// Event listener for messages sent to us
+// Event listener for messages sent to the content script
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
   // Formatting messages from the background script
-  if (request.action === 'apply-format-code') {
-    console.log('Got message:', request);
-    console.log('Current selection is', getSelectionHtml());
+  if (request.command === 'format-apply-code') {
     var newtext = '<code>' + getSelectionHtml() + '</code>'
     document.execCommand('insertHTML', false, newtext);
+  } else if (request.command === 'format-remove') {
+    document.execCommand('removeFormat', false, null);
   }
 });
 

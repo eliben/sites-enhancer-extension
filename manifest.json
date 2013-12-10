@@ -11,9 +11,13 @@
       "js": ["content.js"]
     }],
   "commands": {
-    "apply-format-code": {
+    "format-apply-code": {
       "suggested_key": { "default": "Alt+Shift+C" },
-      "description": "Apply Code formatting"
+      "description": "Apply Code formatting to selection"
+    },
+    "format-remove": {
+      "suggested_key": { "default": "Alt+Shift+R" },
+      "description": "Remove all formatting from selection"
     }
   }
 }

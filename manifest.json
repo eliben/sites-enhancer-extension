@@ -6,14 +6,14 @@
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [
+    { "matches": ["https://sites.google.com/*"],
+      "js": ["content.js"]
+    }],
   "commands": {
-    "toggle-feature-bazzooka": {
-      "suggested_key": { "default": "Ctrl+Shift+Y" },
-      "description": "Send an event to the extension"
-    },
-    "toggle-feature-foo": {
-      "suggested_key": { "default": "Alt+Shift+C"},
-      "description": "Send an event to the extension"
+    "apply-format-code": {
+      "suggested_key": { "default": "Alt+Shift+C" },
+      "description": "Apply Code formatting"
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "sites-enhancer",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "commands": {
+    "toggle-feature-bazzooka": {
+      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "description": "Send an event to the extension"
+    },
+    "toggle-feature-foo": {
+      "suggested_key": { "default": "Alt+Shift+C"},
+      "description": "Send an event to the extension"
+    }
+  }
+}
